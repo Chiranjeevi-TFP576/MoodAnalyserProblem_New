@@ -29,6 +29,19 @@ namespace TestProject1
             Assert.AreEqual("Happy", actualResult);
 
         }
+        //Exception Handle
+        [TestMethod]
+        public void GivenNullMoodShouldReturnHAPPY()
+        {
+
+            //Assert
+            AnalyseMood analyserMood = new AnalyseMood();
+            //Act
+            string actualResult = analyserMood.GetMood("null");
+            
+            //Assert
+            Assert.AreEqual("Happy", actualResult);
+        }
 
     }
 }

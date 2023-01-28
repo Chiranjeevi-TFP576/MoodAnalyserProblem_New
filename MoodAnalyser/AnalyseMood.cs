@@ -8,13 +8,45 @@ namespace MoodAnalyser
 {
     public class AnalyseMood
     {
-        
-            public string GetMood(string Mood)
+
+        public string message; 
+        public AnalyseMood()
+        {
+
+        }
+        public AnalyseMood(string message)
+        {
+            this.message = message.ToUpper();
+        }
+        public string GetMood(string message)
+
+        {
+            try
             {
-                if (Mood.Contains("SAD"))
+                if (message.ToLower().Contains("Sad"))
+                {
                     return "SAD";
+                }
+
                 else
+                {
                     return "Happy";
+                }
             }
+
+            catch(NullReferenceException )
+            {
+                return "Happy";
+            }
+         
+                                     
+            
+        }
+
+        
+
+
+
     }
+    
 }
