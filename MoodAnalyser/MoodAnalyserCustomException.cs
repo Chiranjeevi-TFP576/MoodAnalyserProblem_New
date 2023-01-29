@@ -10,7 +10,8 @@ namespace MoodAnalyser
     {
         public enum ExceptionType
         {
-            NULL_MOOD, EMPTY_MOOD
+            NULL_MOOD, EMPTY_MOOD, NO_SUCH_METHOD,
+            NO_SUCH_CLASS,
         }
         public ExceptionType exceptionType;
         public MoodAnalyserCustomException(ExceptionType type, string message) : base(message)

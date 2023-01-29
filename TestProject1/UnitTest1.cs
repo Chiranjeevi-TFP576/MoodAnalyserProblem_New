@@ -31,7 +31,8 @@ namespace TestProject1
             Assert.AreEqual("Happy", actualResult);
 
         }
-        //Exception Handle
+        //UC2_Exception Handle
+
         [TestMethod]
         public void GivenNullMoodShouldReturnHAPPY()
         {
@@ -45,14 +46,14 @@ namespace TestProject1
             Assert.AreEqual("Happy", actualResult);
         }
 
-        //UC3
+        //UC3 CustomException
         [TestMethod]
         public void GivenMessage_WhenNull_USingCustomException_ShouldReturnNullMood()
         {
             analysemood = new AnalyseMood();
             try
             {
-                string message = analysemood.GetMood("");
+                string message = analysemood.GetMood("null");
             }
             catch (MoodAnalyserCustomException exception)
             {
@@ -60,6 +61,34 @@ namespace TestProject1
             }
 
         }
+        //UC3.2_ Empty DefaultConstructor
+        [TestMethod]
+        public void GivenMessage_WhenEmpty_UsingCustomException_ShouldReturnNullMood()
+        {
+            analysemood = new AnalyseMood();
+            try
+            {
+                string message = analysemood.GetMood1();
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(MoodAnalyserCustomException.ExceptionType.EMPTY_MOOD, exception.exceptionType);
+            }
+        }
+        
+        [TestMethod]
+
+        public void ReturnMoodAnalyseObject_USingParameterizedConstructor()
+        {
+            analysemood = new AnalyseMood();
+            
+            //MoodAnalyser obj = (MoodAnalyser)expected;
+            object expected1 = analysemood;
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserAppWithCore.MoodAnalyser", "MoodAnalyser", "HAPPY");
+            // expected.Equals(obj);
+            Assert.AreEqual(analysemood, expected1);
+        }
+
 
     }
 }

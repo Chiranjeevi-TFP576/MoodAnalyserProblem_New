@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MoodAnalyser
 {
     public class AnalyseMood
@@ -28,7 +29,7 @@ namespace MoodAnalyser
                 return "Happy";
         }
         //UC-2 Using Try Catch Blocks to Handle Null Exception.
-        public string GetMood1(string message)
+        public string GetMood1()
         {
             try
             {
