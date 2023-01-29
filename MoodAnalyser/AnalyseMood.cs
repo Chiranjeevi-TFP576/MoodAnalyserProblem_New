@@ -9,41 +9,40 @@ namespace MoodAnalyser
     public class AnalyseMood
     {
 
-        public string message; 
+
+        public string message;
+        
         public AnalyseMood()
         {
 
-        }
+        }     
         public AnalyseMood(string message)
         {
             this.message = message.ToUpper();
         }
-        public string GetMood(string message)
-
+        public string GetMood(string Mood)
+        {
+            if (Mood.Contains("SAD"))
+                return "SAD";
+            else
+                return "Happy";
+        }
+        //UC-2 Using Try Catch Blocks to Handle Null Exception.
+        public string GetMood1(string message)
         {
             try
             {
-                if (message.ToLower().Contains("Sad"))
-                {
+                if (message.ToLower().Contains("sad"))
                     return "SAD";
-                }
-
-                else
-                {
-                    return "Happy";
-                }
+                else return "HAPPY";
             }
-
-            catch(NullReferenceException )
-            {
-                return "Happy";
-            }
-         
-                                     
             
-        }
+            catch (NullReferenceException)
+            {
+                return "HAPPY";
+            }
 
-        
+        }
 
 
 

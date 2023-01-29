@@ -5,6 +5,8 @@ namespace TestProject1
     [TestClass]
     public class UnitTest1
     {
+        private AnalyseMood analysemood;
+
         //Return SAD in Sad Mood
         [TestMethod]
         public void ReturningSad()
@@ -41,6 +43,22 @@ namespace TestProject1
             
             //Assert
             Assert.AreEqual("Happy", actualResult);
+        }
+
+        //UC3
+        [TestMethod]
+        public void GivenMessage_WhenNull_USingCustomException_ShouldReturnNullMood()
+        {
+            analysemood = new AnalyseMood();
+            try
+            {
+                string message = analysemood.GetMood("");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(MoodAnalyserCustomException.ExceptionType.NULL_MOOD, exception.exceptionType);
+            }
+
         }
 
     }
