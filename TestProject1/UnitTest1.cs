@@ -76,18 +76,10 @@ namespace TestProject1
             }
         }
         
-        [TestMethod]
+        
 
-        public void ReturnMoodAnalyseObject_USingParameterizedConstructor()
-        {
-            analysemood = new AnalyseMood();
-            
-            //MoodAnalyser obj = (MoodAnalyser)expected;
-            object expected1 = analysemood;
-            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserAppWithCore.MoodAnalyser", "MoodAnalyser", "HAPPY");
-            // expected.Equals(obj);
-            Assert.AreEqual(analysemood, expected1);
-        }
+        
+
 
 
     }
